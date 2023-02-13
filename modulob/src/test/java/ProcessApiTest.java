@@ -1,6 +1,9 @@
+import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Optional;
@@ -39,8 +42,26 @@ public class ProcessApiTest {
 
             // Assert
         } catch (IOException e) {
+            Assert.fail("****** Exception ******");
             System.out.println("Error al abrir Visual Studio Code: " + e.getMessage());
         }
+    }
+
+
+    @Test
+    public void procesoparalelo() {
+        try {
+            // Arrange
+            URL resourceUrl = ProcessApiTest.class.getClassLoader().getResource("ejemplo.bat");
+            File resourceFile = new File(resourceUrl.toURI());
+            Process process = new ProcessBuilder(
+                    resourceFile.getAbsolutePath().toString())
+                    .start();
+            // Assert
+        } catch (Exception e) {
+            Assert.fail("****** Exception ******");
+        }
+
     }
 
 
