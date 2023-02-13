@@ -1,0 +1,5 @@
+rootProject.name = 'java-9-em'
+
+include 'moduloa'
+include 'modulob'
+
