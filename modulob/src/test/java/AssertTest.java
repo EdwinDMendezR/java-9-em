@@ -15,4 +15,17 @@ public class AssertTest {
 
     }
 
+    @Test
+    public void methodTest() {
+
+        // Arrange
+
+        //int assert = 10;
+        //System.out.println("El valor de la variable assert es: " + assert);
+        // Act
+
+        // Assert
+
+    }
+
 }
